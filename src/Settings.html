@@ -1,0 +1,120 @@
+<html>
+
+	<head>
+		<link rel = "stylesheet" href="CSS_Files\cssSheet1.css" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<script>
+			function validateForm(){
+				if(document.getElementById("password").value != document.getElementById("confirm_password").value) {
+					alert("Confirm Password does not match Password");
+					return false;
+				}
+			}
+		</script>
+		
+		<style>
+            li{
+                float: left;
+                
+            }
+            li:last-child{
+                border-right: none;
+            }
+            li a{
+                display: block;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                color: #F5BCFF;
+            }
+            li a:hover{
+                color: #ffffff;
+            }
+            .activeTab{
+                color: #ffffff;
+                background-color: #111;
+            }
+            .footer {
+			position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: red;
+                color: white;
+                text-align: center;
+            }
+        </style>
+		
+	</head>
+	
+	<body>
+	
+		<div>            
+            <h3> Title </h3>            
+            <ul style = "list-style-type: none;
+                padding: 0;
+                background-color: #FA3C3C;
+                overflow: hidden;">
+                <li> <a href = "PHP_Files/PerProfile.php" > <i class="glyphicon glyphicon-user"></i> Profile </a> </li>
+                <li> <a href = "UploadVideo.html"><i class="glyphicon glyphicon-film"></i> Upload Video </a> </li>
+                <li> <a href = "BankDetails.html"><i class="glyphicon glyphicon-piggy-bank"></i> Bank Details </a> </li>
+				<li> <a href = "Ranklist.html"><i class="glyphicon glyphicon-list-alt"></i> Rank List </a> </li>
+				<li> <a href = "#" class = "activeTab"><i class="glyphicon glyphicon-list-alt"></i> Settings </a> </li>
+                <li> <a href = "Login.html"><i class="glyphicon glyphicon-log-out"></i> Logout </a> </li>
+            </ul>
+        </div>
+	
+		<form action = "PHP_Files/DeleteAccount.php" method = "POST">
+			<table align = "center">
+				<td> <input type = "submit" value = "Delete Account" /> </td>
+			</table>
+		</form>
+		
+		<div>
+			<form id = "updateForm" action = "PHP_Files/UpdateAccount.php" method = "POST">
+				<table align = "center" style = "border-spacing: 10px;
+												border-collapse: separate;">
+					<tr>
+						<td> Email </td>
+						<td> <input type = "text" name = "email" /> </td>
+					<tr>
+					<tr>
+						<td> Username </td>
+						<td> <input type = "text" name = "username" /> </td>
+					<tr>
+						<td> Password </td>
+						<td> <input type = "text" name = "password" /> </td>
+					</tr>
+					<!--<tr>
+						<td> Confirm Password </td>
+						<td> <input type = "text" name = "confirmPassword" /> </td>
+					</tr>-->
+					<tr>
+						<td> Phone Number </td>
+						<td> <input type = "text" name = "number" maxlength="10" /> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan = "2"> <input type = "submit" value = "Update" /> </td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		
+		<div class = "footer">
+            <div class="wrapper">
+                <ul style = "list-style-type: none;
+                    overflow: hidden;
+                    background-color: #FA3C3C;">
+                  <li> <a href="PerProfile.php">Profile</a> <li>
+                  <li> <a href="Ranklist.html">Rank List</a> </li>
+				  <li> <a href="../Login.html">Logout</a> </li>
+                </ul>
+            </div>
+        </div>
+		
+	</body>
+	
+</html>

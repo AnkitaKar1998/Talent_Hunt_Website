@@ -1,0 +1,169 @@
+<html>
+	<head>
+		<title> SignUp Page </title>
+		<link rel = "stylesheet" href="CSS_Files\cssSheet1.css" type="text/css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<script>
+			function validateForm() {
+				var fName = document.forms["RegisterForm"]["fName"].value;
+				/*var first=/^([a-zA-Z ]){3,30}$/;
+				if(!first.test(fName))
+                                 {
+                                   alert("First name must be only be alphabets and it must contain 3 or more alphabets ");
+                                    return false;
+                                 }
+				
+				var lName = document.forms["RegisterForm"]["lName"].value;
+				if(!first.test(lName))
+                                        {
+                                           alert("last name must be only be alphabets and it must contain 3 or more alphabets ");
+                                            return false;
+                                         }*/
+				var number = document.forms["RegisterForm"]["number"].value;
+				
+				var phoneNo = /^\d{10}$/;
+				if(!phoneNo.test(number)){
+					alert("Enter valid contact no");
+					return false;
+				}
+				var email = document.forms["RegisterForm"]["email"].value;
+				
+				var emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+				if(!emailRegExp.test(email)){
+					alert("Enter valid Email ID");
+					return false;
+				}
+				if(document.getElementById("password").value != document.getElementById("confirm_password").value) {
+					alert("Confirm Password does not match Password");
+					return false;
+				}
+				
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<style>
+           li{
+                float: left;
+                
+            }
+            li:last-child{
+                border-right: none;
+            }
+            li a{
+                display: block;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                color: #F5BCFF;
+            }
+            li a:hover{
+                color: #ffffff;
+            }
+            .activeTab{
+                color: #ffffff;
+                background-color: #111;
+            }
+			
+			.footer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: red;
+				color: white;
+				text-align: center;
+			}
+        </style>
+        
+    
+    
+    
+        <div>
+			<h1 style = "font-family: cursive;
+				padding-left: 50">
+				<i><b> The Shining Stars </b></i>
+			</h1>
+            <ul style = "list-style-type: none;
+                padding: 0;
+                background-color: #FA3C3C;
+                overflow: hidden;">
+                <li> <a href = "Home.php" > <i class="glyphicon glyphicon-home"></i> Home </a> </li>
+                <li> <a href = "SignUp.html" class="activeTab"><i class="glyphicon glyphicon-user"></i> Sign Up </a> </li>
+                <li> <a href = "Login.php"><i class="glyphicon glyphicon-log-in"></i> Login </a> </li>
+                <li> <a href = "Ranklist.php"><i class="glyphicon glyphicon-list-alt"></i> Rank list </a> </li>
+            </ul>
+        </div>
+		
+		<center>
+			<form name="SignUpForm" 
+					onsubmit = "return validateForm() == true)"
+					method = "POST"
+					action = "InsertAccount.php">
+				<table style = "border-spacing: 10px;
+								border-collapse: separate;">
+					<tr>
+						<td>First Name:</td>
+						<td><input type="text" name="fName" required></td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><input type="text" name="lName" required></td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><input type="text" name="userName" required></td>
+					</tr>
+					<tr>
+						<td>Email-id:</td>
+						<td><input type="text" name="email" required></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="password" name="password" id="password" required ></td>
+					</tr>
+					<tr>
+						<td> Confirm Password:</td>
+						<td><input type="password" name="confirmPassword" id="confirm_password" required ></td>
+					</tr>
+					<tr>
+						<td>Phone No:</td>
+						<td><input type="text" name="number" maxlength="10" required></td>
+					</tr>
+					<tr>
+						<td>Gender:</td>
+						<td>
+							<input type="radio" value="male" name="gender"> MALE
+							<input type="radio" value="female" name="gender">FEMALE
+						</td>
+					</tr>
+					<tr>
+						<td>Date of Birth:</td>
+						<td><input type="date" name="dob" min="1950-01-01" max="1999-12-31" required></td>
+					</tr>
+					<tr>
+					   <td align="center"><input type="submit" value="Submit" id="submitButton" class = "buttonDesign"></td>
+					   <td align="center"><input type="reset" value="Reset" class = "buttonDesign"></td>
+					</tr>
+				</table>
+			</form>
+		</center>
+
+		<div class="footer">
+            <div class="wrapper">
+    
+                <ul style = "list-style-type: none;
+							overflow: hidden;
+							background-color: #FA3C3C;">
+					<li> <a href="Home.php">Home</a> <li>
+					<li> <a href="SignUp.html">Sign Up</a> </li>
+					<li> <a href="Ranklist.php">Rank List</a> </li>
+                </ul>
+            </div>
+		</div>
+
+	</body>
+</html>
