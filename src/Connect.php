@@ -1,4 +1,4 @@
 <?php
-	$connect = mysqli_connect("fdb24.awardspace.net", "3035718_ankita", "AnkitaVarsha@5143", "3035718_ankita")
+	$connect = mysqli_connect("host_name", "username", "password", "database_name")
 				or die(mysqli_error($connect));
 ?>

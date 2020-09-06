@@ -17,3 +17,12 @@ Frontend:-
 Backend:-
 - PHP
 - Ajax
+
+## How to run the project
+<ul>
+<li> Clone the project.
+<li> Make a SQL database in PHP My Admin referring the instructions in <b><i>Database_Instructions.pdf</i></b>
+<li> In "src" folder, go to "Connect.php" file.
+<li> In line number 2, enter your hostname (eg. "localhost" if you are running it in WAMP/LAMP/XAMPP), username, password and database name in appropriate place.
+<li> Now run this project in WAMP/LAMP/XAMPP.
+</ul>
